@@ -1,0 +1,8 @@
+{
+  "name": "jun-dev-workflows",
+  "version": "1.0.0",
+  "description": "Jun's development workflow commands and skills for Claude Code",
+  "author": "Jun",
+  "commands": true,
+  "skills": true
+}
