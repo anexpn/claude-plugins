@@ -20,10 +20,18 @@ Development workflow commands and skills for Claude Code.
 
 ## Installation
 
-### From local directory
-```bash
-/plugin install file:///Users/jun/code/claude-plugins
+### From GitHub (Recommended)
+```
+/plugin install anexpn/claude-plugins
 ```
 
-### As a marketplace plugin
-To be configured in a plugin marketplace.
+### From Marketplace
+```
+/plugin marketplace add anexpn/claude-plugins
+/plugin install jun-dev-workflows@jun-workflows
+```
+
+### From local directory
+```
+/plugin install file:///Users/jun/code/claude-plugins
+```
