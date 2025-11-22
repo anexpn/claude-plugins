@@ -56,22 +56,23 @@ Start by gathering context and refining the user's idea into a fully-formed spec
 
 After the spec is approved, create a comprehensive implementation plan.
 
+**The plan answers:** "In what order do I build this and where does each piece go?"
+
+**CRITICAL: No code in the plan.** No snippets, pseudocode, or implementation sketches. Code belongs in dev-impl where it can be written, tested, and iterated immediately.
+
 **Approach:**
-1. Assume the implementer has zero context about the codebase
-2. Assume the implementer has questionable taste and needs explicit guidance
-3. Document everything needed:
-   - Which files to touch for each task
-   - Code structure and patterns to follow
-   - Testing requirements and approach
-   - Documentation to check or update
-   - How to test each change
-4. Break the work into bite-sized tasks
-5. Emphasize: DRY, YAGNI, TDD, frequent commits
-6. Account for the implementer being skilled but unfamiliar with the toolset and domain
-7. Provide detailed guidance on test design (don't assume they know this well)
+1. **Tech stack selection** (when needed) - If new libraries/frameworks are required:
+   - Research options and evaluate against project needs
+   - Document the choice and rationale
+   - Get approval before proceeding
+2. **File/module mapping** - Where new code lives (exact paths)
+3. **Dependency order** - What to build first so later pieces have foundations
+4. **Integration points** - Where new code connects to existing code, patterns to follow
+5. **Risk flags** - Parts that might be tricky or need investigation
+6. **Testing guidance** - What to test, where test files go, scenarios to cover
 
 **Prompt to use:**
-> Great. I need your help to write out a comprehensive implementation plan. Assume that the engineer has zero context for our codebase and questionable taste. Document everything they need to know. Which files to touch for each task, code, testing, docs they might need to check. How to test it. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits. Assume they are a skilled developer, but know almost nothing about our toolset or problem domain. Assume they don't know good test design very well. Please write out this plan, in full detail, into docs/. Extract a task list for the engineer to track his process. Let the engineer update the task list when he finishes a step.
+> Great. I need your help to write out an implementation plan. The plan should answer: "In what order do I build this and where does each piece go?" Do NOT write any code—describe what needs to be built, not how to code it. Include: tech stack decisions (if new dependencies needed), file paths for all new/modified code, dependency order between tasks, integration points with existing code, and risk flags. Break work into bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.
 
 **Output:** Write the complete plan to `docs/development/NNN-<name>/plan.md`
 

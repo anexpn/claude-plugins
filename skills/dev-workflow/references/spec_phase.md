@@ -104,8 +104,9 @@ The final spec.md should follow this structure:
 ## Key Constraints
 
 - **No implementation details** - Focus on WHAT to build, not HOW
+- **No tech stack decisions** - Library/framework choices belong in the planning phase
 - **User-centric** - Describe behavior from user's perspective
-- **Technology-agnostic where possible** - Unless specific tech is required
+- **Technology-agnostic** - Describe capabilities needed, not specific tools
 - **One question at a time** - This is critical for good user experience
 
 ## Handoff
