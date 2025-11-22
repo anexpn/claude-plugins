@@ -9,6 +9,18 @@ description: Guide a complete design and planning session for development work (
 
 Guide the creation of a complete development specification, implementation plan, and task list for new features, bugfixes, or hotfixes. This skill covers three phases: specification generation, detailed planning, and task breakdown.
 
+## Execution Model
+
+**This skill runs in the main conversation, not as a subagent.**
+
+The specification phase requires back-and-forth interaction with the user (asking questions, getting approval for each section). Subagents cannot interact with users, so this phase must run directly in the main conversation.
+
+For the planning and task extraction phases, you have two options:
+1. **Continue in main conversation** - Simpler, maintains context
+2. **Spawn subagents** - Use when you want isolated context for planning
+
+If spawning subagents for planning/tasks, you must embed all necessary context in the prompt (see dev-workflow skill for templates).
+
 ## When to Use This Skill
 
 Use this skill when:
