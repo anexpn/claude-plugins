@@ -220,6 +220,7 @@ Write plan to `docs/development/NNN-<name>/plan.md`:
 - ❌ **Vague instructions** - "Update the handler" without specifying which handler or what change
 - ❌ **Assuming knowledge** - Expecting familiarity with project conventions
 - ❌ **Tasks too large** - Each task should be completable in one focused session
+- ❌ **Tasks too granular** - "Create directory", "Create file", "Add import" are implementation details, not tasks. A task delivers a coherent piece of functionality.
 - ❌ **Missing file paths** - Every file to touch must be explicitly named
 - ❌ **No verification steps** - Every task needs a way to confirm it's done
 - ❌ **Ignoring dependencies** - Tasks must be ordered so foundations exist before dependent work

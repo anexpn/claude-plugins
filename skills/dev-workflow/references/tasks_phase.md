@@ -23,7 +23,17 @@ For each task in the plan:
 1. **Identify the task** - Clear, one-line description
 2. **Note line numbers** - Where this task is detailed in plan.md
 3. **Preserve order** - Maintain the sequence from the plan
-4. **Keep atomic** - Each task should be a single unit of work
+4. **Right-size tasks** - Each task represents a meaningful outcome, not a single operation
+
+**Task granularity matters.** A task should:
+- Deliver a coherent piece of functionality
+- Be testable on its own
+- Make sense to a human reviewer
+
+**Tasks are NOT:**
+- File operations ("create directory", "create file", "add import")
+- Single-line changes ("add property to config")
+- Setup mechanics ("install dependencies", "configure environment")
 
 ### Step 3: Create Task List File
 
@@ -102,6 +112,14 @@ Bad task descriptions:
 - ❌ "Do the user stuff" (Too vague)
 - ❌ "Make it work" (No specifics)
 - ❌ "Implement everything in Task 1" (Too large)
+
+Too granular (combine into one task):
+- ❌ "Create src/models directory"
+- ❌ "Create User.ts file"
+- ❌ "Add User class"
+- ❌ "Add validation to User"
+
+Should be: "Create User model with validation"
 
 ## Line Number References
 

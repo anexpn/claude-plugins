@@ -80,6 +80,8 @@ After the spec is approved, create a comprehensive implementation plan.
 
 Extract a structured task list from the implementation plan.
 
+**Task granularity:** Each task should deliver a coherent piece of functionality that can be tested on its own. Tasks are NOT file operations ("create directory", "create file") or single-line changes. If you find yourself writing tasks like "Create src/models directory" and "Create User.ts file" - combine them into "Create User model with validation".
+
 **Task list format:**
 ```markdown
 # Task List: <Feature/Fix Name>
