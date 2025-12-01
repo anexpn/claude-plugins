@@ -27,15 +27,22 @@ skills/             # Skills (markdown in SKILL.md files)
 
 ## Skill Architecture
 
-The dev-workflow skills follow a coordinated pattern:
+The plugin provides two complementary development workflows:
 
-1. **dev-spec** → Interactive spec + plan + task creation (runs in main conversation)
-2. **dev-impl** → Isolated task implementation (designed for subagent sessions)
-3. **dev-review** → Code review against spec/plan (runs in main conversation)
+1. **dev-auto** → Autonomous development workflow
+   - Generates detailed specs, plans, and tasks for autonomous agent execution
+   - All artifacts serve as session memory: `docs/development/NNN-name/{spec.md, plan.md, tasks.md}`
+   - Use when: Requirements are well-defined upfront, autonomous implementation desired
+   - Contains 5 phases: Specification (interactive) → Planning → Task Extraction → Implementation (autonomous) → Review (interactive)
 
-**Key concept:** `dev-workflow` orchestrates the full process. `dev-spec`, `dev-impl`, and `dev-review` can be used independently.
+2. **dev-guided** → Human-in-the-loop iterative development
+   - Creates problem statement, decisions log, runbook, and progress tracking
+   - Use when: Requirements emerge during implementation, decisions need human approval at each step
+   - Artifacts: `docs/development/NNN-name/{problem_statement.md, decisions.md, runbook.md, progress.md, plan-N.md}`
 
-The `dev-workflow/references/` directory contains phase-specific instructions meant to be embedded in subagent prompts (subagents have no context—everything must be passed in the prompt).
+**Key concept:** Choose the workflow that matches your needs. dev-auto for autonomous execution with upfront planning, dev-guided for iterative work with ongoing human decisions.
+
+The `dev-auto/references/` directory contains phase-specific instructions and subagent prompt templates (subagents have no context—everything must be embedded in the prompt).
 
 ## Writing/Modifying Skills
 
@@ -46,10 +53,20 @@ The `dev-workflow/references/` directory contains phase-specific instructions me
 
 ## Development Workflow Artifacts
 
-When using dev-spec/dev-workflow, artifacts are stored in:
+**For dev-auto workflow:**
 ```
 docs/development/NNN-<name>/
 ├── spec.md       # Design specification
 ├── plan.md       # Implementation plan
 └── tasks.md      # Task tracking list
+```
+
+**For dev-guided workflow:**
+```
+docs/development/NNN-<name>/
+├── problem_statement.md  # Problem scope and boundaries
+├── decisions.md          # Explicit technical decisions with rationale
+├── runbook.md            # Build/test/validation instructions and feedback points
+├── progress.md           # Session-by-session progress log
+└── plan-N.md             # Session-specific implementation plans
 ```

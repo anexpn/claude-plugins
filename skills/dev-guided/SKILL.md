@@ -1,6 +1,6 @@
 ---
 name: dev-guided
-description: Guided development workflow for human-in-the-loop iterative implementation. Use this skill for development work where the human wants to maintain control over key decisions, the problem is exploratory rather than well-defined, or when working incrementally with frequent human feedback. This skill creates problem_statement.md, decisions.md, runbook.md, and progress.md artifacts in a development session folder, then guides iterative implementation sessions where the agent plans work, implements, and records progress.
+description: Human-in-the-loop iterative development. Use when requirements will emerge during implementation, decisions need human approval at each step, or work will span multiple sessions with frequent feedback loops. Creates problem statement, decisions log, runbook, and progress tracking.
 ---
 
 # Guided Development
