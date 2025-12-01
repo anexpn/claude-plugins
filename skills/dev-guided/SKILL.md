@@ -163,6 +163,8 @@ For detailed guidance on implementation sessions, read `references/implementatio
 
 ## Key Principles
 
+### Workflow Principles
+
 1. **No Assumptions**: Never assume "sensible defaults" or "de facto standards". Always ask for explicit human decisions.
 
 2. **Respect Feedback Points**: Feedback points in runbook.md are mandatory pause points. Never skip them.
@@ -172,6 +174,25 @@ For detailed guidance on implementation sessions, read `references/implementatio
 4. **Session-Scoped Plans**: Each implementation session gets its own plan file. Plans are ephemeral and session-specific, not long-term roadmaps.
 
 5. **Problem-Focused**: problem_statement.md defines the problem and scope, not the solution. It provides boundaries, not prescriptions.
+
+### Engineering Principles
+
+1. **Test Driven Development (TDD)**: For every new feature or bugfix, you MUST:
+   - Write a failing test that correctly validates the desired functionality
+   - Run the test to confirm it fails as expected
+   - Write ONLY enough code to make the failing test pass
+   - Run the test to confirm success
+   - Refactor if needed while keeping tests green
+
+2. **YAGNI (You Aren't Gonna Need It)**: The best code is no code. Don't add features we don't need right now. When it doesn't conflict with YAGNI, architect for extensibility and flexibility.
+
+3. **DRY (Don't Repeat Yourself)**: Work hard to reduce code duplication, even if the refactoring takes extra effort.
+
+4. **Minimal Changes**: Make the SMALLEST reasonable changes to achieve the desired outcome. Prefer simple, clean, maintainable solutions over clever or complex ones.
+
+5. **Fix Broken Things Immediately**: All test failures are your responsibility, even if they're not your fault. Fix broken things immediately when you find them.
+
+6. **Never Skip Tests**: Never delete a test because it's failing. Never write tests that "test" mocked behavior. Test output must be pristine to pass.
 
 ## Example Usage
 
